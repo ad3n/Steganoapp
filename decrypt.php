@@ -21,7 +21,7 @@ $pesan = unserialize($message);
 
 if ($pesan) {
 	header (sprintf('Content-Type: image/%s', $pesan['type']));
-	header("Content-Disposition: attachment;filename= decrypted.png");
+	header(sprintf('Content-Disposition: attachment;filename= decrypted.%s', $pesan['type']));
 	echo base64_decode($pesan['data']);
 } else {
 	echo "<script type='text/javascript'>alert('Gambar tidak mengandung pesan'); window.history.go(-1);</script>";

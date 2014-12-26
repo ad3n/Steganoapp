@@ -1,5 +1,6 @@
 {
     "require": {
-        "kzykhys/steganography": "dev-master"
+        "kzykhys/steganography": "dev-master",
+		"karwana/mime": "dev-master"
     }
 }
