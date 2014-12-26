@@ -7,6 +7,14 @@ require __DIR__ . '/vendor/autoload.php';
 $background = $_FILES['background']['tmp_name'];
 $pesan = $_FILES['pesan']['tmp_name'];
 
+$ext = end((explode('.', $_FILES['background']['name'])));
+$allowed = array('png', 'gif', 'jpg', 'jpeg');
+
+if (in_array($ext, $allowed)) {
+	echo "<script type='text/javascript'>alert('Pastikan Anda mengupload gambar'); window.history.go(-1);</script>";
+	exit();
+}
+
 if ($_FILES['background']['size'] <= $_FILES['pesan']['size']) {
 	echo "<script type='text/javascript'>alert('Gambar background harus lebih besar ukurannya dari gambar pesan'); window.history.go(-1);</script>";
 	exit();
