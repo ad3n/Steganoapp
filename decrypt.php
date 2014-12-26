@@ -9,7 +9,7 @@ $pesan = $_FILES['pesan']['tmp_name'];
 $ext = end((explode('.', $_FILES['pesan']['name'])));
 $allowed = array('png');
 
-if (in_array($ext, $allowed)) {
+if (! in_array($ext, $allowed)) {
 	echo "<script type='text/javascript'>alert('Pastikan Anda mengupload gambar yang terenkripsi'); window.history.go(-1);</script>";
 	exit();
 }
